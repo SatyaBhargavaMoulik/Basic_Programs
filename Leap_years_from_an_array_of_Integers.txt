@@ -1,3 +1,15 @@
+/*
+	input: 1600 1604 1605 1900 2000 2017     ---------->single string value 
+	
+	output:
+		1600 is a leap year
+		1604 is a leap year
+		1605 is not a leap year
+		1900 is not a leap year
+		2000 is a leap year
+		2017 is Not a Leap Year
+*/
+
 class Program
 {
 	static void Main(string[ ] args)
