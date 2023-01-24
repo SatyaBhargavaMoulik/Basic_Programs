@@ -1,0 +1,30 @@
+class Program
+{
+	int rows,columns,index=0;
+	Console.Write("Enter Number of Rows : ");
+	rows=Convert.ToInt32(Console.ReadLine( ));
+	Console.Write("Enter Number of Columns : ");
+	columns=Convert.ToInt32(Console.ReadLine( ));
+	int[ , ] TwoD_array=new int[rows,columns];
+	int[ ] OneD_array=new int[rows * columns];
+	for(int i=0;i<rows;i++)
+	{	
+		for(int j=0;j<columns;j++)
+		{
+			Console.Write($"{i} row {j} column element : ");
+			TwoD_array[i,j]=Convert.ToInt32(Console.ReadLine());
+		}
+	}
+	for(int i=0;i<rows;i++)
+	{
+		for(int j=0;j<columns;j++)
+		{
+			OneD_array[index]=TwoD_array[i,j];
+			index++;
+		}
+	}
+	foreach(int element in OneD_array)
+	{
+		Console.Write(element + " ");
+	}
+}
