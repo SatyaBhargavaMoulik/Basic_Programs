@@ -1,0 +1,15 @@
+class Program
+{	
+	string[ ] string_array;
+	int sum=0,average_of_array_elements;
+	Console.WriteLine("Enter Array of numbers Seperated by space: ");
+	string_array=Console.ReadLine( ).Split(' ');
+	int[ ] array_of_numbers=new int[string_array.Length];
+	for(int i=0;i<array_of_numbers.Length;i++)
+	{
+		array_of_numbers[i]=Convert.ToInt32(string_array[i]);
+		sum+=array_of_numbers[i];
+	}
+	average_of_array_elements=(sum/array_of_numbers.Length);
+	Console.WriteLine($"Average of Given Array is : {average_of_array_elements}");
+}
