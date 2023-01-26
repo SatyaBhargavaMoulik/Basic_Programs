@@ -1,0 +1,97 @@
+// Visual Studio 2022
+
+int matrix_1_rows,matrix_1_columns,matrix_2_rows,matrix_2_columns;
+Console.Write("Enter Number of Rows of Matrix 1 : ");
+matrix_1_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter Number of Columns of Matrix 1 : ");
+matrix_1_columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter Number of Rows of Matrix 2 : ");
+matrix_2_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter Number of Columns of Matrix 2 : ");
+matrix_2_columns = Convert.ToInt32(Console.ReadLine());
+
+//declaration of arrays
+int[,] Matrix_1=new int[matrix_1_rows,matrix_1_columns];
+int[,] Matrix_2=new int[matrix_2_rows,matrix_2_columns];
+int[,] result_Matrix=new int[matrix_2_rows,matrix_2_columns];
+
+
+Console.WriteLine("Enter Matrix - 1 Elements");
+Console.WriteLine("-------------------------");
+for(int j=0;j<matrix_1_rows;j++)
+{
+    for(int k=0;k<matrix_1_columns;k++)
+    {
+        Console.Write($"{j} Row {k} column : ");
+        Matrix_1[j, k] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+Console.WriteLine();
+Console.WriteLine("Enter Matrix - 2 Elements");
+Console.WriteLine("-------------------------");
+for (int j = 0; j < matrix_2_rows; j++)
+{
+    for (int k = 0; k < matrix_2_columns; k++)
+    {
+        Console.Write($"{j} Row {k} column : ");
+        Matrix_2[j, k] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+if(matrix_1_rows == matrix_2_rows)
+{
+    if (matrix_1_columns == matrix_2_columns)
+    {
+        for(int i=0;i<matrix_1_rows;i++)
+        {
+            for(int j=0;j<matrix_1_columns;j++)
+            {
+                result_Matrix[i, j] = Matrix_1[i, j] + Matrix_2[i, j];
+            }
+        }
+    }
+    else
+    {
+        Console.WriteLine("Matrix Addition is Not Possible");
+    }
+}
+else
+{
+    Console.WriteLine("Matrix Addition is Not Possible");
+}
+Console.WriteLine();
+
+Console.WriteLine("Matrix - 1");
+Console.WriteLine("-----------");
+for (int i=0;i<matrix_1_rows;i++)
+{
+    for(int j=0;j<matrix_1_columns;j++)
+    {
+        Console.Write(Matrix_1[i, j]+"\t");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
+Console.WriteLine("Matrix - 2");
+Console.WriteLine("-----------");
+for (int i = 0; i < matrix_2_rows; i++)
+{
+    for (int j = 0; j < matrix_2_columns; j++)
+    {
+        Console.Write(Matrix_2[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
+Console.WriteLine("Addition of Matrix-1, Matrix-2 : ");
+Console.WriteLine("----------------------------------");
+for (int i=0;i<matrix_1_rows;i++)
+{
+    for(int j=0;j<matrix_1_columns;j++)
+    {
+        Console.Write(result_Matrix[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+
+
