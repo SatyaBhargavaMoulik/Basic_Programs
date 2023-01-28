@@ -1,0 +1,27 @@
+int matrix_rows, matrix_columns;
+Console.WriteLine("Enter Number of Rows:");
+matrix_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter Number of Columns: ");
+matrix_columns = Convert.ToInt32(Console.ReadLine());
+
+int[,] Matrix_1 = new int[matrix_rows, matrix_columns];
+
+Console.WriteLine("Enter Matrix  Elements");
+Console.WriteLine("----------------------");
+for (int i = 0; i < matrix_rows; i++)
+{
+    for (int j = 0; j < matrix_columns; j++)
+    {
+        Console.Write($"{i} Row {j} column : ");
+        Matrix_1[i,j] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+for (int i = 0; i < matrix_columns ; i++)       
+{
+    for (int j = 0; j < matrix_rows; j++)       
+    {
+        Console.Write(Matrix_1[j, i] + "   ");  
+    }
+    Console.WriteLine();
+}
