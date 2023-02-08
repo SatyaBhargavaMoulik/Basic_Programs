@@ -1,0 +1,15 @@
+Question : Reverse the given  number
+=======
+
+Code:
+====
+	int number,remainder,reversed_number=0;
+	Console.Write("Enter Number : ");
+	number = int.Parse(Console.ReadLine());
+	while(number!=0)                      
+	{
+    		remainder = number % 10;          
+    		reversed_number = reversed_number * 10 + remainder;  
+    		number = number / 10;           
+	}
+	Console.WriteLine($"Reversed Number : {reversed_number}");
