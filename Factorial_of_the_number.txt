@@ -1,0 +1,18 @@
+Question :   Factorial of the given number
+=======
+
+int number;
+Console.Write("Enter Number : ");
+number = Convert.ToInt32(Console.ReadLine());
+int factorial(int number)
+{
+    if(number==0 ||number==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return number * factorial(number-1);
+    }
+}
+Console.WriteLine($"{number}! = {factorial(number)}");
