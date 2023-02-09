@@ -1,0 +1,47 @@
+Problem : Checking whether the given number is an automorphic number
+================================================
+	Automorphic Number : A number whose square ends with the same digits as number itself
+			e.g.,5 =(5x5) = 25
+
+Coding Approach :
+============
+
+	int number,square_root_of_number,no_of_digits_of_given_number=0,duplicate_number,remainder,no_of_iterations=1,final_number=0;
+	Console.Write("Enter Number : ");
+	number = Convert.ToInt32(Console.ReadLine());
+	duplicate_number = number;
+	square_root_of_number = number * number;
+
+	// counting the number of digits of a given number
+	while(duplicate_number>0)
+	{
+    		duplicate_number = duplicate_number / 10;
+    		no_of_digits_of_given_number++;
+	}
+	
+	//to fetch last (no_of_digits_of a given_number) digits  from the square root of the given number in reverse order
+	while(no_of_iterations<= no_of_digits_of_given_number)
+	{
+    		remainder = square_root_of_number % 10;
+    		duplicate_number = duplicate_number*10+remainder;
+    		square_root_of_number /= 10;
+    		no_of_iterations++;
+	}
+
+	//reversing the fetched digits and assigning to a final_number	
+	while(duplicate_number>0)
+	{
+    		remainder = duplicate_number % 10;
+    		final_number = final_number * 10 + remainder;
+    		duplicate_number /= 10;
+	}
+
+	//checking whethe the final number is equal to given number
+	if(number==final_number)
+	{
+    		Console.WriteLine("Automorphic Number");
+	}
+	else
+	{
+    		Console.WriteLine("Not a Automorphic Number");
+	}
