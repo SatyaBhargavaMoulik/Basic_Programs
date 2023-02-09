@@ -1,0 +1,33 @@
+0	1	1	2	3	5	8	13	21 .......
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		static void Fibonocci_series(int number)
+		{
+			int temporary_number, first_number=0, second_number=1;
+    			if (number == 0)
+    			{
+        				Console.WriteLine("Cannot Print Fibonocci Series");
+    			}
+    			else if (number == 1)
+    			{	
+        				Console.WriteLine(0);
+    			}
+   			else
+    			{
+        				int iteration = 1;
+        				Console.Write(0 + " "+1 +" ");
+        				while (iteration <= number-2 )
+        				{
+            				temporary_number = first_number + second_number;
+            				first_number = second_number;
+            				second_number = temporary_number;
+            				Console.Write(second_number+" ");
+            				iteration++;
+        				}
+   			}
+		}
+	}
+}
