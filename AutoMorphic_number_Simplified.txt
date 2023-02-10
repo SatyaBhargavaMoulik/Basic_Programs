@@ -1,0 +1,25 @@
+int number,square_root_of_the_number;
+Console.Write("Enter Number: ");
+number = Convert.ToInt32(Console.ReadLine());
+square_root_of_the_number = number * number;
+int Automorphous_number(int number,int square_root_of_the_number)
+{
+    while (number != 0)            
+    {
+        if (number % 10 != square_root_of_the_number % 10)     
+        {
+            return 0;
+        }
+        number = number / 10;
+        square_root_of_the_number /= 10;
+    }
+    return 1;
+}
+if(Automorphous_number(number,square_root_of_the_number)==1)
+{
+    Console.WriteLine("Automorphic Number");
+}
+else
+{
+    Console.WriteLine("Not an Automorphic Number");
+}
